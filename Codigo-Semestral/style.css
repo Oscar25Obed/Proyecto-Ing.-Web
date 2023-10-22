@@ -5,6 +5,7 @@
 
 body{
   background-color:   #D1F2EB;
+  font-family: Tahoma, sans-serif;
 }
 
 header{
@@ -387,5 +388,25 @@ th {
 }
 
 .formulario button:hover {
+  background-color: #2980b9;
+}
+#boton-atras {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+#boton-atras::before {
+  content: '\2190'; /* Carácter Unicode para la flecha hacia atrás */
+  margin-right: 10px;
+}
+
+#boton-atras:hover {
   background-color: #2980b9;
 }
