@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Restaurantes Panamá</title>
+    
+</head>
+<body>
+    <header>
+        <img src="Logo.png" alt="Logo de la Pagina" class="logoContainer">
+        <div class="socialContainer">
+            <form>
+                <input type="search" id="inputsearch" name="b" placeholder="Buscar...">
+            </form>
+            <div >
+                <a href="https://instagram.com/solociencia.com23?igshid=MzNlNGNkZWQ4Mg=="><img src="icono1.png" alt="Icono de Instagram" width="45" height="45"></a> 
+            </div>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="icono2.png" alt="Icono de Facebook" width="45" height="45"></a>
+            </div>
+            <div>
+                <a href=""><img src="icono3.png" alt="Icono de Twitter" width="45" height="45"></a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="NcontenedorR">
+            <div class="RestauranteR">
+                <div class="formulario">
+                    <h2>Reservación de Restaurante</h2>
+                    <form action="procesar_reserva.php" method="post">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+            
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+            
+                        <label for="fecha">Fecha de Reserva:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+            
+                        <label for="personas">Número de Personas:</label>
+                        <select id="personas" name="personas" required>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                        </select>
+            
+                        <button type="submit">Reservar Ahora</button>
+                    </form>
+                </div>
+                </div>
+              </div>
+        </div> 
+    </section>
+    <footer>
+        <p>Copyright (C) 2023 ResPan.COM<br>Todos los derechos reservados<br></p>
+    
+    </footer>
+</body>
+</html>
