@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleback.css">
     <title>Restaurantes Panamá</title>
     
 </head>
@@ -21,7 +22,7 @@
                 <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="icono2.png" alt="Icono de Facebook" width="45" height="45"></a>
             </div>
             <div>
-                <a href=""><img src="icono3.png" alt="Icono de Twitter" width="45" height="45"></a>
+                <a href=""><img src="user.png" alt="Icono de Twitter" width="45" height="45"></a>
             </div>
         </div>
     </header>
@@ -39,7 +40,8 @@
             
                         <label for="fecha">Fecha de Reserva:</label>
                         <input type="date" id="fecha" name="fecha" required>
-            
+                        <label for="fecha">Hora de Reserva:</label>
+                        <input type="time" id="hora" name="hora" min="10:00" max="22:00">
                         <label for="personas">Número de Personas:</label>
                         <select id="personas" name="personas" required>
                             <option value="1">1 persona</option>
@@ -48,7 +50,16 @@
                             <option value="4">4 personas</option>
                             <option value="5">5 personas</option>
                         </select>
-            
+                        <label for="personas">Sillas para niños:</label>
+                        <select id="personas" name="personas" required>
+                            <option value="1">1 </option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 </option>
+                        </select>
+                        <label for="nombre">Comentarios adicionales:</label>
+                        <input type="text" id="coments" name="comentarios" required>
                         <button type="submit">Reservar Ahora</button>
                     </form>
                 </div>
@@ -58,7 +69,6 @@
     </section>
     <footer>
         <p>Copyright (C) 2023 ResPan.COM<br>Todos los derechos reservados<br></p>
-    
     </footer>
 </body>
 </html>
