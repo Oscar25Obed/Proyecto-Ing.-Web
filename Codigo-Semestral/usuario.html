@@ -20,8 +20,50 @@
             <div>
                 <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="https://drive.google.com/uc?export=download&id=1Nz4QobNnuNJX0PT49t_hcGdX8TlbRxaB" alt="Icono de Facebook" width="45" height="45"></a>
             </div>
+            <div>
+                <a href="usuario.html"><img src="https://drive.google.com/uc?export=download&id=1oDuoiQbhpdpdlxqSsg_k-BRQ78lTgmpr" alt="Icono de Usuario" width="45" height="45"></a>
+            </div>
         </div>
     </header>
+    <section>
+        <div class="NcontenedorR">
+            <div class="RestauranteR">
+                <div class="formulario">
+                    <h2>Actualizar Datos del usuario</h2>
+                    <div class="usuario">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Imagen redonda">
+                    </div>
+                    <form action="/procesar-datos" method="post">
+                        <div class="form-group">
+                          <label for="nombre">Nombre</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo">
+                        </div>
+                        <div class="form-group">
+                          <label for="correo">Correo electrónico</label>
+                          <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico">
+                        </div>
+                        <div class="form-group">
+                          <label for="edad">Edad</label>
+                          <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad">
+                        </div>
+                        <div class="form-group">
+                          <label for="genero">Género</label>
+                          <select class="form-control" id="genero" name="genero">
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="pais">País</label>
+                          <input type="text" class="form-control" id="pais" name="pais" placeholder="País">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                      </form>
+                </div>
+                </div>
+              </div>
+        </div> 
+    </section>
 <footer>
     <p>Copyright (C) 2023 ResPan.COM<br>Todos los derechos reservados<br></p>
 </footer>

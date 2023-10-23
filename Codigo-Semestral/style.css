@@ -465,3 +465,8 @@ th {
 .custom-select.active .select-options {
   display: block;
 }
+.usuario{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
