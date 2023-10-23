@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="styleback.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+  <center><div class="logo-container">
+    <img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de Reserva de restaurante " class="logoB"></div>
+  </center>
+  <div class="container">
+    <div class="login-form">
+        <div class="login-box">
+            <h1>Iniciar sesion</h1>
+            <form action="Primera página.html" method="post">
+              <label>Usuario</label>
+              <input type="text" placeholder="Usuario" name="usuario" />
+              <label>Contrasena</label>
+              <input type="password" placeholder="********" name="contrasena" />
+              <input type="submit" value="Enviar">
+            </form>
+            <p>¿No tienes una cuenta? <button class="toggle-btn">Registro</button></p>
+          </div>
+    </div>
+    <div class="register-form">
+        <div class="signup-box">
+            <h1>Registro</h1>
+            <form action="registro.jsp" method="post">
+              <label>Nombre</label>
+              <input type="text" placeholder="Nombre" name="nombre" />
+              <label>Apellido</label>
+              <input type="text" placeholder="Apellido" name="apellido"/>
+              <label>Edad</label>
+              <input type="number" min="1" placeholder="Edad" name="edad"/>
+              <label>Contrasena</label>
+              <input type="password" placeholder="********" name="contrasena"/>
+              <label>Usuario</label>
+              <input type="text" placeholder="" name="usuario"/>
+              <input type="submit" value="Enviar">
+            </form>
+            <p>¿Ya tienes una cuenta? <button class="toggle-btn">Iniciar sesion</button></p>
+          </div>
+    </div>
+    <section class="herobgcolor"></section>
+  </div>
+
+  <script>
+    const loginForm = document.querySelector('.login-form');
+    const registerForm = document.querySelector('.register-form');
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+
+    // Ocultar formulario de registro al cargar la pÃ¡gina
+    registerForm.style.display = 'none';
+
+    // Alternar entre formularios al hacer clic en los botones 
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+        registerForm.style.display = registerForm.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+  </script>
+<div class="wrapper">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="wrapperer">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="wrapperblue">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+</body>
+</html>

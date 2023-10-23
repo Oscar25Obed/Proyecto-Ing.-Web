@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleback.css">
     <title>Restaurantes Panamá</title>
     
 </head>
 <body>
     <header>
-        <a href="Primera página.html"><img src="Logo.png" alt="Logo de la Pagina" class="logoContainer"></a>
+        <a href="Primera página.html"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
         <div class="socialContainer">
             <form>
                 <input type="search" id="inputsearch" name="b" placeholder="Buscar...">
             </form>
             <div >
-                <a href="https://instagram.com/solociencia.com23?igshid=MzNlNGNkZWQ4Mg=="><img src="icono1.png" alt="Icono de Instagram" width="45" height="45"></a> 
+                <a href="https://instagram.com/solociencia.com23?igshid=MzNlNGNkZWQ4Mg=="><img src="https://drive.google.com/uc?export=download&id=18MNUF86hwCrd4VSzZbHKqDzJpxdO9Ydv" alt="Icono de Instagram" width="45" height="45"></a> 
             </div>
             <div>
-                <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="icono2.png" alt="Icono de Facebook" width="45" height="45"></a>
+                <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="https://drive.google.com/uc?export=download&id=1Nz4QobNnuNJX0PT49t_hcGdX8TlbRxaB" alt="Icono de Facebook" width="45" height="45"></a>
             </div>
             <div>
-                <a href=""><img src="icono3.png" alt="Icono de Twitter" width="45" height="45"></a>
+                <a href="usuario.html"><img src="https://drive.google.com/uc?export=download&id=1oDuoiQbhpdpdlxqSsg_k-BRQ78lTgmpr" alt="Icono de Usuario" width="45" height="45"></a>
             </div>
         </div>
     </header>
@@ -39,7 +40,8 @@
             
                         <label for="fecha">Fecha de Reserva:</label>
                         <input type="date" id="fecha" name="fecha" required>
-            
+                        <label for="fecha">Hora de Reserva:</label>
+                        <input type="time" id="hora" name="hora" min="10:00" max="22:00">
                         <label for="personas">Número de Personas:</label>
                         <select id="personas" name="personas" required>
                             <option value="1">1 persona</option>
@@ -48,7 +50,16 @@
                             <option value="4">4 personas</option>
                             <option value="5">5 personas</option>
                         </select>
-            
+                        <label for="personas">Sillas para niños:</label>
+                        <select id="personas" name="personas" required>
+                            <option value="1">1 </option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 </option>
+                        </select>
+                        <label for="nombre">Comentarios adicionales:</label>
+                        <input type="text" id="coments" name="comentarios" required>
                         <button type="submit">Reservar Ahora</button>
                     </form>
                 </div>
@@ -58,7 +69,6 @@
     </section>
     <footer>
         <p>Copyright (C) 2023 ResPan.COM<br>Todos los derechos reservados<br></p>
-    
     </footer>
 </body>
 </html>

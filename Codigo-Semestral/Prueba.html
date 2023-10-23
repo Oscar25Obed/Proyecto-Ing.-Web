@@ -3,58 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtro de Búsqueda</title>
-
+    <link rel="stylesheet" href="styles.css">
+    <title>Imagen Select</title>
 </head>
 <body>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Busqueda Central" title="Busqueda Rapida" class="form-control">
-
-    <table id=myTable>
-    
-            <th>CODIGO</th>
-            <th>CIUDAD</th>
-            <th>CENTRAL</th>
-            <th>EQUIPO</th>
-            <th>TIPO DE EQUIPO</th>
-            <th>MARCA</th>
-            <th>MODELO</th>
-            <th>UNIDAD</th>
-            <th>CANTIDAD</th>
-    
-    <tr>
-    
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-        ..<td id="hola" valign="top" width="150" align="center"></td>
-    
-    </tr>
-    
-    </table>
-    <script>
-        function myFunction() {
-         var input, filter, table, tr, td, i;
-         input = document.getElementById("myInput");
-         filter = input.value.toUpperCase();
-         table = document.getElementById("myTable");
-         tr = table.getElementsByTagName("tr");
-         for (i = 0; i < tr.length; i++) {
-         td = tr[i].getElementsByTagName("td")[3];
-          if (td) {
-            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-               tr[i].style.display = "";
-             } else {
-              tr[i].style.display = "none";
-            }
-           }       
-         }
-       }
-       
-       </script>
+    <div class="custom-select">
+        <img src="icono1.png" alt="Seleccionar opción">
+        <ul class="select-options">
+            <li data-value="opcion1">Opción 1</li>
+            <li data-value="opcion2">Opción 2</li>
+            <li data-value="opcion3">Opción 3</li>
+        </ul>
+        <input type="hidden" name="selected-option" id="selected-option">
+    </div>
 </body>
 </html>

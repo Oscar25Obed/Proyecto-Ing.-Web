@@ -5,6 +5,7 @@
 
 body{
   background-color:   #D1F2EB;
+  font-family: Tahoma, sans-serif;
 }
 
 header{
@@ -388,4 +389,84 @@ th {
 
 .formulario button:hover {
   background-color: #2980b9;
+}
+#boton-atras {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+#boton-atras::before {
+  content: '\2190'; /* Carácter Unicode para la flecha hacia atrás */
+  margin-right: 10px;
+}
+
+#boton-atras:hover {
+  background-color: #2980b9;
+}
+@media (max-width: 768px) {
+  .Ncontenedor {
+      flex-wrap: wrap;
+  }
+
+  .Restaurante {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .Restaurante img {
+      max-width: 100%;
+  }
+
+  .formulario {
+      width: 90%;
+  }
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.select-options {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.select-options li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.select-options li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show the options when the image is clicked */
+.custom-select.active .select-options {
+  display: block;
+}
+.usuario{
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
 }
