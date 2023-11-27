@@ -6,19 +6,6 @@ CREATE TABLE Usuario (
     email VARCHAR(255) NOT NULL
 );
 
--- Crear la tabla Reserva
-CREATE TABLE Reserva (
-    idReserva INT AUTO_INCREMENT PRIMARY KEY,
-     id_restaurante INT,
-    fecha DATE NOT NULL,
-    hora TIME NOT NULL,
-    cantidadPersonas INT NOT NULL,
-    comentario TEXT,
-    idUsuario INT,
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
-    FOREIGN KEY (id_restaurante) REFERENCES Restaurantes(id_restaurante)
-);
-
 -- Crear la tabla Restaurante
 CREATE TABLE Restaurante (
     idRestaurante INT AUTO_INCREMENT PRIMARY KEY,
@@ -31,6 +18,19 @@ CREATE TABLE Restaurante (
     costo DECIMAL(10,2),
     email VARCHAR(255),
     sitioWeb VARCHAR(255)
+);
+
+-- Crear la tabla Reserva
+CREATE TABLE Reserva (
+    idReserva INT AUTO_INCREMENT PRIMARY KEY,
+     id_restaurante INT,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    cantidadPersonas INT NOT NULL,
+    comentario TEXT,
+    idUsuario INT,
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+    FOREIGN KEY (id_restaurante) REFERENCES Restaurante(id_restaurante)
 );
 
 -- Crear la tabla Direccion
