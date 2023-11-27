@@ -29,7 +29,7 @@ CREATE TABLE Reserva (
     cantidadPersonas INT NOT NULL,
     comentario TEXT,
     idUsuario INT,
-    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
     FOREIGN KEY (id_restaurante) REFERENCES Restaurante(id_restaurante)
 );
 
