@@ -23,7 +23,7 @@ CREATE TABLE Restaurante (
 -- Crear la tabla Reserva
 CREATE TABLE Reserva (
     idReserva INT AUTO_INCREMENT PRIMARY KEY,
-     id_restaurante INT,
+    idRestaurante INT,
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
     cantidadPersonas INT NOT NULL,
