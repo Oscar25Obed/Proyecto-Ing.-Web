@@ -24,9 +24,12 @@ CREATE TABLE Restaurante (
 CREATE TABLE Reserva (
     idReserva INT AUTO_INCREMENT PRIMARY KEY,
     idRestaurante INT,
+    nombre VARCHAR(255) NOT NULL, 
+    email VARCHAR(255) NOT NULL, 
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
     cantidadPersonas INT NOT NULL,
+    sillasNinos INT NOT NULL,
     comentario TEXT,
     idUsuario INT,
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
