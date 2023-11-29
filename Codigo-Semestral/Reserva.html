@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleback.css">
-    <title>Reserva</title>
-    
+    <title>Reserva</title>  
 </head>
 <body>
     <header>
@@ -32,13 +31,14 @@
         document.getElementById("boton-atras").addEventListener("click", function() {
             window.history.back();
         });
-    </script>
+    </script>   
     <section>
         <div class="NcontenedorR">
             <div class="RestauranteR">
                 <div class="formulario">
                     <h2>Reservación de Restaurante</h2>
                     <form action="procesar_reserva.php" method="post">
+                        <input type="hidden" name="idRestaurante" value="" id="idRestauranteField"> <!--Valaor oculto para el id del restaurante-->
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
             
@@ -50,7 +50,7 @@
                         <label for="fecha">Hora de Reserva:</label>
                         <input type="time" id="hora" name="hora" min="10:00" max="22:00">
                         <label for="personas">Número de Personas:</label>
-                        <select id="personas" name="personas" required>
+                        <select id="personas" name="cantidadPersonas" required>
                             <option value="1">1 persona</option>
                             <option value="2">2 personas</option>
                             <option value="3">3 personas</option>
@@ -58,7 +58,8 @@
                             <option value="5">5 personas</option>
                         </select>
                         <label for="personas">Sillas para niños:</label>
-                        <select id="personas" name="personas" required>
+                        <select id="sillas_ninos" name="sillasNinos" required>                
+                            <option value="0">0 </option>                           
                             <option value="1">1 </option>
                             <option value="2">2 </option>
                             <option value="3">3 </option>
@@ -66,9 +67,9 @@
                             <option value="5">5 </option>
                         </select>
                         <label for="nombre">Comentarios adicionales:</label>
-                        <input type="text" id="coments" name="comentarios" required>
-                        <button type="submit">Reservar Ahora</button>
-                    </form>
+                        <input type="text" id="coments" name="comentario">      
+                        <button type="submit" name="submit">Reservar Ahora</button>
+                    </form>                   
                 </div>
                 </div>
               </div>
@@ -77,5 +78,23 @@
     <footer>
         <p>Copyright (C) 2023 ResPan.COM<br>Todos los derechos reservados<br></p>
     </footer>
+    <script>
+        // Recuperar el valor de idRestaurante almacenado en localStorage
+        var idRestaurante = localStorage.getItem('idRestaurante');
+    
+        // Verificar si idRestaurante tiene un valor
+        if (idRestaurante) {
+            console.log("idRestaurante:", idRestaurante);
+            // Asigna el valor del idRestaurante al campo oculto
+            document.getElementById("idRestauranteField").value = idRestaurante;
+        } else {
+            console.error("Error: idRestaurante no está definido en localStorage.");
+            // Puedes redirigir al usuario a una página de error o tomar otra acción apropiada
+        }
+    
+        document.getElementById("boton-atras").addEventListener("click", function() {
+            window.history.back();
+        });
+    </script>
 </body>
 </html>
