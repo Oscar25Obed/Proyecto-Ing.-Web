@@ -117,7 +117,7 @@ VALUES
 ('Don Lee', 25, 'Comida rapida', 'Comida china', 'Marbella', 'Familiar', 'donleeapp@gmail.com', 'https://www.donleepanama.com/'),
 ('Leños & Carbón', 25, 'Gourmet', 'Asados', 'Multiplaza', 'Familiar', 'lenosycarbon@gmail.com', 'https://linktr.ee/lenospanama'),
 ('Kotowa', 25, 'Postres', 'Cafetería', 'El Dorado', 'Familiar', 'kotowafarms@cwpanama.net', 'https://www.kotowa.com/'),
-('Korean Street Food', 25, 'Comida rapida', 'Comida coreana', 'Familiar', 'Cincuentenario', 'https://lnk.bio/kostreetpanama');
+('Korean Street Food', 25, 'Comida rapida', 'Comida coreana', 'Familiar', 'Cincuentenario', 'koreanstreetfoodpty@gmail.com', 'https://lnk.bio/kostreetpanama');
 
 
 DECLARE @id_restaurante_verificar INT = 1;
