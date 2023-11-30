@@ -95,6 +95,7 @@ CREATE TABLE Plato (
     FOREIGN KEY (idMenu) REFERENCES Menu(idMenu)
 );
 
+--Inserciones en la tabla Restaurante
 INSERT INTO Restaurante (nombre, capacidad_mesas, tipoComida, tipoRestaurante, ubicacion, categoria, email, sitioWeb)
 VALUES
 ('Gelarti Helado Gourmet', 30, 'Postres', 'Heladería', 'Casco Antiguo', 'Familiar', 'sugerencias@gelarti.comcorreo1@example.com', 'https://www.gelarti.com/'),
