@@ -95,6 +95,31 @@ CREATE TABLE Plato (
     FOREIGN KEY (idMenu) REFERENCES Menu(idMenu)
 );
 
+INSERT INTO Restaurante (nombre, capacidad_mesas, tipoComida, tipoRestaurante, ubicacion, categoria, email, sitioWeb)
+VALUES
+('Gelarti Helado Gourmet', 30, 'Postres', 'Heladería', 'Casco Antiguo', 'Familiar', 'sugerencias@gelarti.comcorreo1@example.com', 'https://www.gelarti.com/'),
+('Athens Pizza', 40, 'Comida rapida', 'Pizzería', 'Obarrio', 'Familiar', 'athenspizza@gmail.com', 'https://www.athenspizzapanama.com/'),
+('Panda House', 25, 'Gourmet', 'Comida china', 'Marbella', 'Familiar', 'info@pandahousepty.com', 'https://pandahousepty.com/'),
+('Ichiban', 25, 'Gourmet', 'Comida japonesa', 'Costa del Este', 'Familiar', 'ichibanjapanesefood@gmail.com', 'https://www.instagram.com/ichiban_panama/?hl=es'),
+('Maguro Japanese BBQ & Sushi', 25, 'Gourmet', 'Comida japonesa', 'Marbella', 'Familiar', 'maguro@gmail.com', 'https://www.instagram.com/maguropty/?hl=es'),
+('tacontento Panamá', 25, 'Gourmet', 'Comida mexicana', 'Multiplaza', 'Familiar', 'tacontentopanama@gmail.com', 'https://www.tacontentopanama.com/'),
+('Slabón', 25, 'Comida rapida', 'Hamburguesas', 'Obarrio', 'Familiar', 'info@slabonpanama.com', 'https://slabonpanama.com/'),
+('Ohtoro Ramén & Sushi', 25, 'Gourmet', 'Comida japonesa', 'Condado del Rey', 'Familiar', 'ohtotoramen@gmail.com', 'https://linktr.ee/oh_toro01'),
+('Casco BURGER', 25, 'Comida rapida', 'Hamburguesas', 'San Francisco', 'Familiar','cascoburger@gmail.com', 'https://linktr.ee/CascoBurger'),
+('Roadsters DINNER', 25, 'Comida rapida', 'Hamburguesas', 'Vía Israel', 'Familiar', 'roadsterdinnerpty@gmail.com', 'https://www.instagram.com/roadstersdinerpty/?hl=es'),
+('Wah Kee Dimsum Palace', 25, 'Gourmet', 'Comida china', 'El Dorado', 'Familiar', 'wahkeepty@gmail.com', 'https://wahkeepty.com/'),
+('Moocha Gelato', 25, 'Postres', 'Bubble  tea', 'Costa del Este', 'Familiar', 'mochagelato@gmail.com', 'https://www.instagram.com/moochapty/?hl=es'),
+('Ajisen Ramen', 25, 'Gourmet', 'Comida japonesa', 'El Dorado', 'Familiar', 'info@ajisenramenpanama.com', 'https://ajisenramenpanama.com/'), 
+('Tayami Japan Cuisine & more', 25, 'Gourmet', 'Comida japonesa', 'San Francisco', 'Familiar', 'tayamijapancousine@gmail.com', 'https://linktr.ee/tayamisushi'),
+('Cantina del Tigre', 25, 'Gourmet', 'Comida antillana', 'San Francisco', 'Familiar', 'Admin@cantinadeltigre.com', 'https://www.cantinadeltigre.com/'),
+('Yoi korean fried chicken', 25, 'Gourmet', 'Comida coreana', 'El Dorado', 'Familiar', 'yoikoreanfriedchicken@gmail.com', 'https://www.yoikoreanfriedchicken.com/'),
+('Misawa Premium Bakery', 25, 'Postres', 'Panadería', 'El Dorado', 'Familiar', 'misawapremiumbakery@gmail.com', 'https://misawabakery.com/'),
+('Don Lee', 25, 'Comida rapida', 'Comida china', 'Marbella', 'Familiar', 'donleeapp@gmail.com', 'https://www.donleepanama.com/'),
+('Leños & Carbón', 25, 'Gourmet', 'Asados', 'Multiplaza', 'Familiar', 'lenosycarbon@gmail.com', 'https://linktr.ee/lenospanama'),
+('Kotowa', 25, 'Postres', 'Cafetería', 'El Dorado', 'Familiar', 'kotowafarms@cwpanama.net', 'https://www.kotowa.com/'),
+('Korean Street Food', 25, 'Comida rapida', 'Comida coreana', 'Familiar', 'Cincuentenario', 'https://lnk.bio/kostreetpanama');
+
+
 DECLARE @id_restaurante_verificar INT = 1;
 DECLARE @fecha_verificar DATE = '2023-11-25';
 DECLARE @hora_verificar TIME = '19:00';
