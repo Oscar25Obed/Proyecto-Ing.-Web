@@ -120,6 +120,31 @@ VALUES
 ('Kotowa', 25, 'Postres', 'Cafetería', 'El Dorado', 'Familiar', 'kotowafarms@cwpanama.net', 'https://www.kotowa.com/'),
 ('Korean Street Food', 25, 'Comida rapida', 'Comida coreana', 'Familiar', 'Cincuentenario', 'koreanstreetfoodpty@gmail.com', 'https://lnk.bio/kostreetpanama');
 
+-- Inserciones en la tabla Direccion
+INSERT INTO Direccion (provincia, distrito, corregimiento, calle, idRestaurante)
+VALUES 
+('Panamá', 'Ciudad de Panamá', 'San Felipe', 'Av. A', 1),
+('Panamá', 'Ciudad de Panamá', 'Obarrio', 'Calle 57', 2),
+('Panamá', 'Ciudad de Panamá', 'Marbella', 'Calle 53 Este', 3),
+('Panamá', 'Ciudad de Panamá', 'Costa del Este', 'Av. Vista del Pacífico', 4),
+('Panamá', 'Ciudad de Panamá', 'Marbella', 'Financial Park L-5', 5),
+('Panamá', 'Ciudad de Panamá', 'Multiplaza', 'Vía Israel', 6),
+('Panamá', 'Ciudad de Panamá', 'Obarrio', 'Calle 58 Este', 7),
+('Panamá', 'Ciudad de Panamá', 'Condado del Rey', 'Av. Miguel A. Brostella', 8),
+('Panamá', 'Ciudad de Panamá', 'San Francisco', 'Calle 70', 9),
+('Panamá', 'Ciudad de Panamá', 'Vía Israel', 'Vía Israel', 10),
+('Panamá', 'Ciudad de Panamá', 'El Dorado', 'Av. Miguel A. Brostella', 11),
+('Panamá', 'Ciudad de Panamá', 'Costa del Este', 'Calle Nueva 1664', 12),
+('Panamá', 'Ciudad de Panamá', 'El Dorado', 'Av. 17B Norte', 13),
+('Panamá', 'Ciudad de Panamá', 'San Francisco', 'Calle 77 Plaza Container', 14),
+('Panamá', 'Ciudad de Panamá', 'San Francisco', 'Calle 68 Este', 15),
+('Panamá', 'Ciudad de Panamá', 'El Dorado', 'Av. Ricardo J. Alfaro', 16),
+('Panamá', 'Ciudad de Panamá', 'El Dorado', 'Av. Miguel A. Brostella', 17),
+('Panamá', 'Ciudad de Panamá', 'Marbella', 'Calle 49 Este', 18),
+('Panamá', 'Ciudad de Panamá', 'Multiplaza', 'Calle 60', 19),
+('Panamá', 'Ciudad de Panamá', 'El Dorado', 'Av. Miguel A. Brostella', 20),
+('Panamá', 'Ciudad de Panamá', 'Cincuentenario', 'Av. Cincuentenario', 21);
+
 
 DECLARE @id_restaurante_verificar INT = 1;
 DECLARE @fecha_verificar DATE = '2023-11-25';
