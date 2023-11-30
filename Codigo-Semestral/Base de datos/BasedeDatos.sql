@@ -128,7 +128,7 @@ DECLARE @hora_verificar TIME = '19:00';
 -- Contar el número de mesas reservadas para el restaurante en la fecha y hora específicas
 DECLARE @mesas_reservadas INT;
 SELECT @mesas_reservadas = COUNT(*)
-FROM Reservas
+FROM Reserva
 WHERE id_restaurante = @id_restaurante_verificar
   AND fecha_reserva = @fecha_verificar
   AND hora_reserva = @hora_verificar;
