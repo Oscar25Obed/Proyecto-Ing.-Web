@@ -1,3 +1,37 @@
+<?php
+session_start();
+
+// Conexión a la base de datos
+
+$conn = mysqli_connect('localhost', 'root', '', 'semestralweb');
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+// Verificar si se envió el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $input_email = $_POST["correo"];
+    $input_password = $_POST["contrasena"];
+
+    // Consultar la base de datos para verificar las credenciales
+    $sql = "SELECT * FROM usuario WHERE correo = '$input_email' AND contrasena = '$input_password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        // Inicio de sesión exitoso
+        $_SESSION["user"] = $input_email;
+        header("Location: dashboard.php"); // Redirige a la página de inicio después del inicio de sesión
+        exit();
+    } else {
+        // Credenciales incorrectas
+        echo "Credenciales incorrectas. Inténtalo de nuevo.";
+    }
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,8 +65,8 @@
               <input type="text" placeholder="Nombre" name="nombre" />
               <label for="genero">Género</label>
               <select class="form-control" id="genero" name="genero">
-                <option value="masculino" name="genero">Masculino</option>
-                <option value="femenino" name="genero">Femenino</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
               </select>
               <label>Edad</label>
               <input type="number" min="1" placeholder="Edad" name="edad"/>

@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION["user"])) {
+    header("Location: login.html"); // Redirige al usuario al formulario de inicio de sesión si no ha iniciado sesión
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +18,7 @@
 </head>
 <body>
     <header>
-        <a href="dashboard.php"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
+        <a href="home.html"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
         <div class="socialContainer">
             <form>
                 <input type="search" id="inputsearch" name="b" placeholder="Buscar...">
@@ -21,7 +30,7 @@
                 <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="https://drive.google.com/uc?export=download&id=1Nz4QobNnuNJX0PT49t_hcGdX8TlbRxaB" alt="Icono de Facebook" width="45" height="45"></a>
             </div>
             <div>
-                <a href="usuario.html"><img src="https://drive.google.com/uc?export=download&id=1oDuoiQbhpdpdlxqSsg_k-BRQ78lTgmpr" alt="Icono de Usuario" width="45" height="45"></a>
+                <a href="profile.php"><img src="https://drive.google.com/uc?export=download&id=1oDuoiQbhpdpdlxqSsg_k-BRQ78lTgmpr" alt="Icono de Usuario" width="45" height="45"></a>
             </div>
         </div>
     </header>
@@ -66,7 +75,7 @@
                 </div>
               </div>
             </div>
-          </form>          
+          </form>
           
     </section>
 <section>
@@ -193,6 +202,7 @@
 </section>
 
 <footer>
+    <a href="logout.php">Cerrar sesión</a>
     <p>Copyright (C) 2023 ResPan.COM<br>Todos los derechos reservados<br></p>
 </footer>
 </body>

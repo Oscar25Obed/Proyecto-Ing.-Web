@@ -1,3 +1,25 @@
+<?php
+include "BasedeDatos.php";
+include "registro.php";
+if (isset($_POST['submit'])) {
+    $nombre = $_POST["nombre"];
+    $genero = $_POST["genero"];
+    $edad = $_POST["edad"];
+    $correo = $_POST["correo"];
+    $contrasena = $_POST["contrasena"];
+    $pais = $_POST["pais"];
+
+    $registro = new Registro($nombre,$genero, $edad, $correo, $contrasena, $pais);
+
+    if ($registro->guardarUsuario()) {
+        echo "Registro de usuario exitoso.";
+    } else {
+        echo "Error al registrar el usuario.";
+    }
+} else {
+    echo "Acceso denegado.";
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,9 +35,9 @@
     <div class="login-form">
         <div class="login-box">
             <h1>Iniciar sesion</h1>
-            <form action="login.php" method="post">
-              <label>Correo</label>
-              <input type="email" placeholder="Correo" name="correo" />
+            <form action="home.html" method="post">
+              <label>Usuario</label>
+              <input type="text" placeholder="Usuario" name="usuario" />
               <label>Contrasena</label>
               <input type="password" placeholder="********" name="contrasena" />
               <input type="submit" name="submit"> 
@@ -31,8 +53,8 @@
               <input type="text" placeholder="Nombre" name="nombre" />
               <label for="genero">Género</label>
               <select class="form-control" id="genero" name="genero">
-                <option value="masculino" name="genero">Masculino</option>
-                <option value="femenino" name="genero">Femenino</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
               </select>
               <label>Edad</label>
               <input type="number" min="1" placeholder="Edad" name="edad"/>
@@ -105,3 +127,4 @@
 
 </body>
 </html>
+
