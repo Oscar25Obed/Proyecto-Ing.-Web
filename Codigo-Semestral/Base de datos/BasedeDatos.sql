@@ -455,7 +455,7 @@ VALUES
     ('Sashimi Fresh', 17.25, 5),
     ('Unagi lover roll', 22.00, 5),
     ('Royal Toro roll', 23.50, 5),
-	('Caldo Tlalpeño', 9.99, 6),
+    ('Caldo Tlalpeño', 9.99, 6),
     ('Sopa Azteca', 8.75, 6),
     ('Burritos de Pastor', 12.25, 6),
     ('Burriro de Pollo', 10.50, 6),
@@ -580,9 +580,6 @@ INSERT INTO Telefono (tipoTelefono, numeroTelefono, idRestaurante) VALUES
     ('Celular', '+507 6000-0020', 20),
     ('Fijo', '+507 2000-0021', 21),
     ('Celular', '+507 6000-0021', 21);
-
-
-
 
 DECLARE @id_restaurante_verificar INT = 1;
 DECLARE @fecha_verificar DATE = '2023-11-25';
