@@ -38,7 +38,9 @@
                 <div class="formulario">
                     <h2>Reservación de Restaurante</h2>
                     <form action="procesar_reserva.php" method="post">
-                        <input type="hidden" name="idRestaurante" value="" id="idRestauranteField"> <!--Valaor oculto para el id del restaurante-->
+                        <input type="hidden" name="idRestaurante" value="" id="idRestauranteField"> <!--Valor oculto para el id del restaurante-->
+                        <input type="hidden" name="nombreRestaurante" value="" id="nombreRestauranteField"> <!--Valor oculto para el nombre del restaurante-->
+                        
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
             
@@ -81,15 +83,22 @@
     <script>
         // Recuperar el valor de idRestaurante almacenado en localStorage
         var idRestaurante = localStorage.getItem('idRestaurante');
-    
         // Verificar si idRestaurante tiene un valor
         if (idRestaurante) {
-            console.log("idRestaurante:", idRestaurante);
             // Asignar el valor del idRestaurante al campo oculto
             document.getElementById("idRestauranteField").value = idRestaurante;
         } else {
             console.error("Error: idRestaurante no está definido en localStorage.");
             // Redirigir al usuario a una página de error o tomar otra acción apropiada
+        }
+
+        var nombreRestaurante = localStorage.getItem('nombreRestaurante');
+        // Verificar si nombreRestaurante tiene un valor
+        if (nombreRestaurante) {
+            // Asigna el valor de nombreRestaurante al campo oculto
+            document.getElementById("nombreRestauranteField").value = nombreRestaurante;
+        } else {
+            console.error("Error: nombreRestaurante no está definido en localStorage.");
         }
     
         document.getElementById("boton-atras").addEventListener("click", function() {
