@@ -85,11 +85,11 @@
         // Verificar si idRestaurante tiene un valor
         if (idRestaurante) {
             console.log("idRestaurante:", idRestaurante);
-            // Asigna el valor del idRestaurante al campo oculto
+            // Asignar el valor del idRestaurante al campo oculto
             document.getElementById("idRestauranteField").value = idRestaurante;
         } else {
             console.error("Error: idRestaurante no está definido en localStorage.");
-            // Puedes redirigir al usuario a una página de error o tomar otra acción apropiada
+            // Redirigir al usuario a una página de error o tomar otra acción apropiada
         }
     
         document.getElementById("boton-atras").addEventListener("click", function() {
@@ -99,3 +99,4 @@
     <a href="logout.php">Cerrar sesión</a>
 </body>
 </html>
+ 
