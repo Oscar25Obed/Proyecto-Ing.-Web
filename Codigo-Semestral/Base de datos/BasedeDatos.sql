@@ -2,8 +2,11 @@
 CREATE TABLE Usuario (
     idUsuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
-    cedula VARCHAR(15) NOT NULL,
-    email VARCHAR(255) NOT NULL
+    email VARCHAR(255) NOT NULL,
+    edad INT NOT NULL,
+    contrasena VARCHAR(20) NOT NULL,
+    genero VARCHAR(20) NOT NULL
+
 );
 
 -- Crear la tabla Restaurante
