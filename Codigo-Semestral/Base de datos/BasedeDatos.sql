@@ -145,6 +145,28 @@ VALUES
 ('Panamá', 'Ciudad de Panamá', 'El Dorado', 'Av. Miguel A. Brostella', 20),
 ('Panamá', 'Ciudad de Panamá', 'Cincuentenario', 'Av. Cincuentenario', 21);
 
+INSERT INTO Facilidad (facilidadNombre, idRestaurante) VALUES
+('Estacionamiento', 1),
+('Acceso para personas con discapacidad', 2),
+('Sillas para bebés', 3),
+('Entrega a domicilio', 4),
+('Descuento de cliente frecuente', 5),
+('Estacionamiento', 6),
+('Acceso para personas con discapacidad', 7),
+('Sillas para bebés', 8),
+('Entrega a domicilio', 9),
+('Descuento de cliente frecuente', 10),
+('Estacionamiento', 11),
+('Acceso para personas con discapacidad', 12),
+('Sillas para bebés', 13),
+('Entrega a domicilio', 14),
+('Descuento de cliente frecuente', 15),
+('Estacionamiento', 16),
+('Acceso para personas con discapacidad', 17),
+('Sillas para bebés', 18),
+('Entrega a domicilio', 19),
+('Descuento de cliente frecuente', 20),
+('Estacionamiento', 21);
 
 DECLARE @id_restaurante_verificar INT = 1;
 DECLARE @fecha_verificar DATE = '2023-11-25';
