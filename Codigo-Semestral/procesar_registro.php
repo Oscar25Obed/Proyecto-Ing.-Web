@@ -3,19 +3,16 @@ include "BasedeDatos.php";
 include "registro.php";
 if (isset($_POST['submit'])) {
     $nombre = $_POST["nombre"];
-    $genero = $_POST["genero"];
     $edad = $_POST["edad"];
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
-    $pais = $_POST["pais"];
-
-    $registro = new Registro($nombre,$genero, $edad, $correo, $contrasena, $pais);
-
+    $genero = $_POST["genero"];
+    $registro = new Registro($nombre,  $correo, $edad, $contrasena, $genero);
     if ($registro->guardarUsuario()) {
-        echo "Registro de usuario exitoso.";
-    } else {
-        echo "Error al registrar el usuario.";
-    }
+      echo "Registro de usuario exitoso.";
+  } else {
+      echo "Error al registrar el usuario.";
+  }
 } else {
     echo "Acceso denegado.";
 }
@@ -51,20 +48,18 @@ if (isset($_POST['submit'])) {
             <form action="procesar_registro.php" method="post">
               <label>Nombre</label>
               <input type="text" placeholder="Nombre" name="nombre" />
-              <label for="genero">Género</label>
-              <select class="form-control" id="genero" name="genero">
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-              </select>
               <label>Edad</label>
               <input type="number" min="1" placeholder="Edad" name="edad"/>
               <label>Correo Electrónico</label>
               <input type="email" placeholder="correo@example.com" name="correo" required />
               <label>Contrasena</label>
               <input type="password" placeholder="********" name="contrasena"/>
-              <label for="pais">País</label>
-              <input type="text" class="form-control" id="pais" name="pais" placeholder="País">
-              <input type="submit" name="submit"> 
+              <label for="genero">Género</label>
+              <select class="form-control" id="genero" name="genero">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+              </select>
+              <input type="submit" name="submit">
             </form>
             <p>¿Ya tienes una cuenta? <button class="toggle-btn">Iniciar sesion</button></p>
           </div>

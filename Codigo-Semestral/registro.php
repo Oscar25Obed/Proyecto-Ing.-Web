@@ -7,16 +7,14 @@ class Registro
     private $edad;
     private $correo;
     private $contrasena;
-    private $pais;
 
-    public function __construct($nombre, $genero, $edad, $correo, $contrasena, $pais)
+    public function __construct($nombre, $edad, $correo, $contrasena, $genero)
     {
         $this->nombre = $nombre;
         $this->genero = $genero;
         $this->edad = $edad;
         $this->correo = $correo;
         $this->contrasena = $contrasena;
-        $this->pais = $pais;
     }
 
     public function guardarUsuario()
@@ -28,18 +26,17 @@ class Registro
         $edad = mysqli_real_escape_string($connection, $this->edad);
         $correo = mysqli_real_escape_string($connection, $this->correo);
         $contrasena = mysqli_real_escape_string($connection, $this->contrasena);
-        $pais = mysqli_real_escape_string($connection, $this->pais);
     
         try {
             // Preparar la consulta SQL con sentencia preparada
-            $consulta = "INSERT INTO usuario (nombre, edad, correo, contrasena, genero, Pais) 
-                         VALUES (?, ?, ?, ?, ?, ?)";
+            $consulta = "INSERT INTO usuario (nombre, email, edad, contrasena, genero) VALUES (?, ?, ?, ?, ?)";
+
     
             // Preparar la sentencia
             $stmt = mysqli_prepare($connection, $consulta);
     
             // Vincular parámetros
-            mysqli_stmt_bind_param($stmt, "sissis", $nombre, $edad, $correo, $contrasena, $genero, $pais);
+            mysqli_stmt_bind_param($stmt, "ssiss", $nombre, $edad, $correo, $contrasena, $genero);
     
             // Ejecutar la sentencia
             $result = mysqli_stmt_execute($stmt);

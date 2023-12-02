@@ -24,7 +24,6 @@ if ($result->num_rows == 1) {
     // No se encontró el usuario (esto no debería ocurrir si la sesión está configurada correctamente)
     die("Error: No se encontró la información del usuario.");
 }
-
 // Cerrar la conexión
 $conn->close();
 ?>
@@ -35,11 +34,11 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleback.css">
-    <title>Reserva</title>  
+    <title>Reserva</title> 
 </head>
 <body>
     <header>
-        <a href="dashboard.php"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
+        <a href="home.html"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
         <div class="socialContainer">
             <form>
                 <input type="search" id="inputsearch" name="b" placeholder="Buscar...">
@@ -51,7 +50,7 @@ $conn->close();
                 <a href="https://www.facebook.com/profile.php?id=100093560545559&mibextid=LQQJ4d"><img src="https://drive.google.com/uc?export=download&id=1Nz4QobNnuNJX0PT49t_hcGdX8TlbRxaB" alt="Icono de Facebook" width="45" height="45"></a>
             </div>
             <div>
-                <a href="profile.php"><img src="https://drive.google.com/uc?export=download&id=1oDuoiQbhpdpdlxqSsg_k-BRQ78lTgmpr" alt="Icono de Usuario" width="45" height="45"></a>
+                <a href="usuario.html"><img src="https://drive.google.com/uc?export=download&id=1oDuoiQbhpdpdlxqSsg_k-BRQ78lTgmpr" alt="Icono de Usuario" width="45" height="45"></a>
             </div>
         </div>
     </header>
@@ -70,7 +69,7 @@ $conn->close();
                     <form action="procesar_reserva.php" method="post">
                         <input type="hidden" name="idRestaurante" value="" id="idRestauranteField"> <!--Valor oculto para el id del restaurante-->
                         <input type="hidden" name="nombreRestaurante" value="" id="nombreRestauranteField"> <!--Valor oculto para el nombre del restaurante-->
-                        
+                        <input type="hidden" name="idUsuario" value="<?php echo $user_data["idUsuario"]; ?>" id="idUsuarioField">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
             

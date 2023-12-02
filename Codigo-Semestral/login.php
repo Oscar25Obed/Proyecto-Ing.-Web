@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_password = $_POST["contrasena"];
 
     // Consultar la base de datos para verificar las credenciales
-    $sql = "SELECT * FROM usuario WHERE correo = '$input_email' AND contrasena = '$input_password'";
+    $sql = "SELECT * FROM usuario WHERE email = '$input_email' AND contrasena = '$input_password'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Credenciales incorrectas
-        echo "Credenciales incorrectas. Inténtalo de nuevo.";
+        echo '<script>alert("Error al iniciar sesion, credenciales incorrectas");</script>';
+  
     }
 }
 
@@ -41,9 +42,11 @@ $conn->close();
   <meta charset="UTF-8">
 </head>
 <body>
-  <div class="logo-container">
-    <img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de Reserva de restaurante " class="logoB"></div>
-  <div class="container">
+<div class="container">
+    <div class="logo-container">
+      <img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de Reserva de restaurante " class="logoB">
+    </div>
+  </div>
     <div class="login-form">
         <div class="login-box">
             <h1>Iniciar sesion</h1>
