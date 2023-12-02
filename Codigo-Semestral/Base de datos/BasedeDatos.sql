@@ -1,3 +1,5 @@
+CREATE DATABASE semestralweb;
+
 -- Crear la tabla Usuario
 CREATE TABLE Usuario (
     idUsuario INT AUTO_INCREMENT PRIMARY KEY,
@@ -6,7 +8,6 @@ CREATE TABLE Usuario (
     edad INT NOT NULL,
     contrasena VARCHAR(20) NOT NULL,
     genero VARCHAR(20) NOT NULL
-
 );
 
 -- Crear la tabla Restaurante

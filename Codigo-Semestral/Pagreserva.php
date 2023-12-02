@@ -24,7 +24,6 @@ if ($result->num_rows == 1) {
     // No se encontró el usuario (esto no debería ocurrir si la sesión está configurada correctamente)
     die("Error: No se encontró la información del usuario.");
 }
-
 // Cerrar la conexión
 $conn->close();
 ?>
@@ -35,7 +34,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleback.css">
-    <title>Reserva</title>  
+    <title>Reserva</title> 
 </head>
 <body>
     <header>
@@ -70,7 +69,7 @@ $conn->close();
                     <form action="procesar_reserva.php" method="post">
                         <input type="hidden" name="idRestaurante" value="" id="idRestauranteField"> <!--Valor oculto para el id del restaurante-->
                         <input type="hidden" name="nombreRestaurante" value="" id="nombreRestauranteField"> <!--Valor oculto para el nombre del restaurante-->
-                        
+                        <input type="hidden" name="idUsuario" value="<?php echo $user_data["idUsuario"]; ?>" id="idUsuarioField">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
             

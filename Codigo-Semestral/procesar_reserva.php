@@ -15,9 +15,9 @@ if (isset($_POST['submit'])) {
     $sillasNinos = $_POST["sillasNinos"]; 
     // Asignar el valor en caso de ser NULL 
     $comentario = ($_POST["comentario"] !== null && $_POST["comentario"] !== "") ? $_POST["comentario"] : "Ninguno";
-
+    $idUsuario = $_POST["idUsuario"];
     // Crear una instancia de la clase Reserva
-    $reserva = new Reserva($idRestaurante, $nombre, $email, $fecha, $hora, $cantidadPersonas, $sillasNinos, $comentario);
+    $reserva = new Reserva($idRestaurante, $nombre, $email, $fecha, $hora, $cantidadPersonas, $sillasNinos, $comentario, $idUsuario);
 
     // Guardar la reserva en la base de datos
     $reserva->guardarReserva();
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
   <header>
-    <a href="Primera página.html"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
+    <a href="dashboard.php"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
     <div class="socialContainer">
         <form>
             <input type="search" id="inputsearch" name="b" placeholder="Buscar...">

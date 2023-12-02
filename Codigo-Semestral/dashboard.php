@@ -18,7 +18,7 @@ if (!isset($_SESSION["user"])) {
 </head>
 <body>
     <header>
-        <a href="home.html"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
+        <a href="dashboard.php"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
         <div class="socialContainer">
             <form>
                 <input type="search" id="inputsearch" name="b" placeholder="Buscar...">
@@ -35,30 +35,18 @@ if (!isset($_SESSION["user"])) {
         </div>
     </header>
     <section>
-        <form action="" method="post">
+        <form action="dashboardFiltrado.php" method="post">
             <div class="container">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="tipo-comida">Tipo de comida</label>
-                    <select class="form-control" id="tipo-comida" name="tipo-comida">
+                    <select class="form-control" id="tipo-comida" name="tipoComida">
                       <option value="todos">Todos</option>
                       <option value="mexicana">Tipicas</option>
                       <option value="italiana">Gourmet</option>
-                      <option value="japonesa">Rapida</option>
+                      <option value="japonesa">Comida rapida</option>
                       <option value="vegetariana">Postres</option>
-                      <option value="vegana">Vegana</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="precio">Precio</label>
-                    <select class="form-control" id="precio" name="precio">
-                      <option value="todos">Todos</option>
-                      <option value="barato">Barato</option>
-                      <option value="medio">Medio</option>
-                      <option value="caro">Caro</option>
                     </select>
                   </div>
                 </div>

@@ -10,8 +10,9 @@ class Reserva
     private $cantidadPersonas;
     private $sillasNinos;
     private $comentario;
+    private $idUsuario;
 
-    public function __construct($idRestaurante, $nombre, $email, $fecha, $hora, $cantidadPersonas, $sillasNinos, $comentario)
+    public function __construct($idRestaurante, $nombre, $email, $fecha, $hora, $cantidadPersonas, $sillasNinos, $comentario, $idUsuario)
     {
         $this->idRestaurante = $idRestaurante;
         $this->nombre = $nombre;
@@ -21,27 +22,35 @@ class Reserva
         $this->cantidadPersonas = $cantidadPersonas;
         $this->sillasNinos = $sillasNinos;
         $this->comentario = $comentario;
+        $this->idUsuario = $idUsuario;
     }
 
     public function guardarReserva()
     {
         global $connection;
 
-        $idRestaurante = mysqli_real_escape_string($connection, $this->idRestaurante);
-        $nombre = mysqli_real_escape_string($connection, $this->nombre);
-        $email = mysqli_real_escape_string($connection, $this->email);
-        $fecha = mysqli_real_escape_string($connection, $this->fecha);
-        $hora = mysqli_real_escape_string($connection, $this->hora);
-        $cantidadPersonas = mysqli_real_escape_string($connection, $this->cantidadPersonas);
-        $sillasNinos = mysqli_real_escape_string($connection, $this->sillasNinos);
-        $comentario = mysqli_real_escape_string($connection, $this->comentario);
+        $idRestaurante = $this->idRestaurante;
+        $nombre = $this->nombre;
+        $email = $this->email;
+        $fecha = $this->fecha;
+        $hora = $this->hora;
+        $cantidadPersonas = $this->cantidadPersonas;
+        $sillasNinos = $this->sillasNinos;
+        $comentario = $this->comentario;
+        $idUsuario = $this->idUsuario;
 
         try {
-            // Preparar la consulta SQL
-            $consulta = "INSERT INTO Reserva (idRestaurante, nombre, email, fecha, hora, cantidadPersonas, sillasNinos, comentario) VALUES ('$idRestaurante', '$nombre', '$email', '$fecha', '$hora', '$cantidadPersonas', '$sillasNinos', '$comentario')";
+            // Preparar la consulta SQL con sentencia preparada
+            $consulta = "INSERT INTO Reserva (idRestaurante, nombre, email, fecha, hora, cantidadPersonas, sillasNinos, comentario, idUsuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            // Ejecutar la consulta
-            $result = mysqli_query($connection, $consulta);
+            // Preparar la sentencia
+            $stmt = mysqli_prepare($connection, $consulta);
+
+            // Vincular parámetros
+            mysqli_stmt_bind_param($stmt, "sssssiisi", $idRestaurante, $nombre, $email, $fecha, $hora, $cantidadPersonas, $sillasNinos, $comentario, $idUsuario);
+
+            // Ejecutar la sentencia
+            $result = mysqli_stmt_execute($stmt);
 
             // Devolver true si la inserción fue exitosa
             return $result;
@@ -49,8 +58,12 @@ class Reserva
             // Manejar el error en caso de fallo
             echo "Error al guardar la reserva: " . $e->getMessage();
             return false;
+        } finally {
+            // Cerrar la sentencia
+            mysqli_stmt_close($stmt);
         }
     }
 }
 
 ?>
+
