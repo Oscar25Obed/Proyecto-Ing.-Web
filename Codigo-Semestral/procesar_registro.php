@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
     <div class="login-form">
         <div class="login-box">
             <h1>Iniciar sesion</h1>
-            <form action="home.html" method="post">
+            <form action="dashboard.php" method="post">
               <label>Usuario</label>
               <input type="text" placeholder="Usuario" name="usuario" />
               <label>Contrasena</label>
