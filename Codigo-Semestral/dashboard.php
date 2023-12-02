@@ -18,7 +18,7 @@ if (!isset($_SESSION["user"])) {
 </head>
 <body>
     <header>
-        <a href="home.html"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
+        <a href="dashboard.php"><img src="https://drive.google.com/uc?export=download&id=13pr47WdQCDipoVwWh66nf2ml2M0ZDDiC" alt="Logo de la Pagina" class="logoContainer"></a>
         <div class="socialContainer">
             <form>
                 <input type="search" id="inputsearch" name="b" placeholder="Buscar...">
