@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
                 </table>
               </div>
             <div>
-              <a href="home.html" class="boton boton-reservas">Página Principal</a>
+              <a href="dashboard.php" class="boton boton-reservas">Página Principal</a>
             </form>
             </div>
           </div>
