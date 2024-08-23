@@ -204,3 +204,13 @@ BEGIN
 END //
 
 DELIMITER ;
+CALL InsertarUsuarioYBoleto(
+    '1234567890', 
+    'Juan Pérez', 
+    'juan.perez@example.com', 
+    'password123', 
+    1, 
+    100.00, 
+    1, 
+    1
+);
