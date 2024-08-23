@@ -214,3 +214,152 @@ CALL InsertarUsuarioYBoleto(
     1, 
     1
 );
+DELIMITER //
+
+CREATE PROCEDURE InsertarCruceroEItinerario (
+    IN p_habitaciones BIGINT,
+    IN p_capacidad BIGINT,
+    IN p_estados BIGINT,
+    IN p_idRuta BIGINT,
+    IN p_nombreItinerario VARCHAR(255),
+    IN p_diaItinerario INT,
+    IN p_descripcion TEXT
+)
+BEGIN
+    DECLARE v_cruceroId BIGINT;
+    
+    -- Insertar un nuevo crucero
+    INSERT INTO MODULO02.Crucero (CRUHabitaciones, CRUCapacidad, CRUEstados)
+    VALUES (p_habitaciones, p_capacidad, p_estados);
+    
+    -- Obtener el ID del crucero recién creado
+    SET v_cruceroId = LAST_INSERT_ID();
+    
+    -- Insertar un nuevo itinerario asociado al crucero
+    INSERT INTO MODULO02.Itinerario (ITIidRuta, ITINombreIntinerario, ITIDiaIntinerario, ITIDescripcion)
+    VALUES (p_idRuta, p_nombreItinerario, p_diaItinerario, p_descripcion);
+    
+    -- Mensaje de éxito
+    SELECT 'Crucero e Itinerario insertados correctamente.' AS mensaje;
+END //
+
+DELIMITER ;
+
+CALL InsertarCruceroEItinerario(
+    100, 
+    3000, 
+    1, 
+    1, 
+    'Itinerario Caribe', 
+    7, 
+    'Visita a las islas del Caribe'
+);
+
+INSERT INTO MODULO02.Ruta (RUTNombreRuta) VALUES ('Ruta A');
+INSERT INTO MODULO02.Ruta (RUTNombreRuta) VALUES ('Ruta B');
+INSERT INTO MODULO02.Ruta (RUTNombreRuta) VALUES ('Ruta C');
+INSERT INTO MODULO02.Ruta (RUTNombreRuta) VALUES ('Ruta D');
+
+CALL InsertarUsuarioYBoleto(
+    '2345678901', 
+    'María González', 
+    'maria.gonzalez@example.com', 
+    'password234', 
+    2, 
+    150.00, 
+    2, 
+    1
+);
+
+CALL InsertarUsuarioYBoleto(
+    '3456789012', 
+    'Luis Hernández', 
+    'luis.hernandez@example.com', 
+    'password345', 
+    3, 
+    200.00, 
+    3, 
+    2
+);
+
+CALL InsertarUsuarioYBoleto(
+    '4567890123', 
+    'Ana Morales', 
+    'ana.morales@example.com', 
+    'password456', 
+    1, 
+    250.00, 
+    1, 
+    3
+);
+
+CALL InsertarUsuarioYBoleto(
+    '5678901234', 
+    'Carlos Ruiz', 
+    'carlos.ruiz@example.com', 
+    'password567', 
+    4, 
+    300.00, 
+    2, 
+    4
+);
+
+CALL InsertarUsuarioYBoleto(
+    '6789012345', 
+    'Elena Pérez', 
+    'elena.perez@example.com', 
+    'password678', 
+    5, 
+    350.00, 
+    3, 
+    5
+);
+CALL InsertarCruceroEItinerario(
+    101, 
+    3500, 
+    1, 
+    2, 
+    'Itinerario Mediterráneo', 
+    10, 
+    'Exploración de la región Mediterránea'
+);
+
+CALL InsertarCruceroEItinerario(
+    102, 
+    4000, 
+    2, 
+    3, 
+    'Itinerario Atlántico', 
+    14, 
+    'Crucero por el Océano Atlántico'
+);
+
+CALL InsertarCruceroEItinerario(
+    103, 
+    4500, 
+    2, 
+    4, 
+    'Itinerario Pacífico', 
+    12, 
+    'Aventura por el Océano Pacífico'
+);
+
+CALL InsertarCruceroEItinerario(
+    104, 
+    5000, 
+    3, 
+    1, 
+    'Itinerario Ártico', 
+    8, 
+    'Exploración de las regiones Árticas'
+);
+
+CALL InsertarCruceroEItinerario(
+    105, 
+    5500, 
+    1, 
+    2, 
+    'Itinerario Antártico', 
+    9, 
+    'Crucero a las regiones Antárticas'
+);
