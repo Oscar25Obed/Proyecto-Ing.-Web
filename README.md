@@ -172,3 +172,35 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 SQL Error [1005] [HY000]: (conn=4307) Can't create table `MODULO02`.`Boletos` (errno: 150 "Foreign key constraint is incorrectly formed")
 
+
+DELIMITER //
+
+CREATE PROCEDURE InsertarUsuarioYBoleto (
+    IN p_cedula VARCHAR(255),
+    IN p_nombreCompleto VARCHAR(255),
+    IN p_email VARCHAR(255),
+    IN p_contrasena TEXT,
+    IN p_idRuta BIGINT,
+    IN p_precio DECIMAL(8,2),
+    IN p_idHabitacion BIGINT UNSIGNED,
+    IN p_idCrucero BIGINT UNSIGNED
+)
+BEGIN
+    DECLARE v_usuarioId BIGINT;
+    
+    -- Insertar un nuevo usuario
+    INSERT INTO MODULO02.Usuario (USUcedula, USUnombreCompleto, USUemail, USUcontrasena)
+    VALUES (p_cedula, p_nombreCompleto, p_email, p_contrasena);
+    
+    -- Obtener el ID del usuario recién creado
+    SET v_usuarioId = LAST_INSERT_ID();
+    
+    -- Insertar un nuevo boleto para el usuario
+    INSERT INTO MODULO02.Boletos (BOLidUsuario, BOLidRuta, BOLPrecio, id_habitacion, id_Crucero)
+    VALUES (v_usuarioId, p_idRuta, p_precio, p_idHabitacion, p_idCrucero);
+    
+    -- Mensaje de éxito
+    SELECT 'Usuario y Boleto insertados correctamente.' AS mensaje;
+END //
+
+DELIMITER ;
