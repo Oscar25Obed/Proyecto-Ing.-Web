@@ -154,3 +154,21 @@ CREATE TABLE IF NOT EXISTS `MODULO02`.`RolesPermisos` (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQL Error [1005] [HY000]: (conn=4307) Can't create table `MODULO02`.`Boletos` (errno: 150 "Foreign key constraint is incorrectly formed")
+
