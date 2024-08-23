@@ -1,4 +1,10 @@
 
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`Ruta`
 -- -----------------------------------------------------
@@ -14,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Ruta` (
 CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `USUidUsuario` BIGINT NOT NULL,
   `USUcedula` VARCHAR(255) NOT NULL,
-  `nombre_Completo` VARCHAR(255) NOT NULL,
-  `email` VARCHAR(255) NOT NULL,
-  `contrasena` TEXT NOT NULL,
+  `USUnombreCompleto` VARCHAR(255) NOT NULL,
+  `USUemail` VARCHAR(255) NOT NULL,
+  `USUcontrasena` TEXT NOT NULL,
   PRIMARY KEY (`USUidUsuario`));
 
 
@@ -75,26 +81,26 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Boletos` (
 -- Table `mydb`.`Roles`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Roles` (
-  `id_Rol` BIGINT NOT NULL,
-  `Rol` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id_Rol`));
+  `ROLidRol` BIGINT NOT NULL,
+  `ROLRol` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`ROLidRol`));
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`UsuarioRoles`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`UsuarioRoles` (
-  `us_Rol` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_Usuario` BIGINT NOT NULL,
-  `id_Rol` BIGINT NOT NULL,
-  PRIMARY KEY (`us_Rol`),
-  INDEX `usuario_roles_id_rol_foreign` (`id_Rol` ASC) VISIBLE,
-  INDEX `usuario_roles_id_usuario_foreign` (`id_Usuario` ASC) VISIBLE,
+  `UROusRol` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `UROidUsuario` BIGINT NOT NULL,
+  `UROidRol` BIGINT NOT NULL,
+  PRIMARY KEY (`UROusRol`),
+  INDEX `usuario_roles_id_rol_foreign` (`UROidRol` ASC) VISIBLE,
+  INDEX `usuario_roles_id_usuario_foreign` (`UROidUsuario` ASC) VISIBLE,
   CONSTRAINT `usuario_roles_id_rol_foreign`
-    FOREIGN KEY (`id_Rol`)
-    REFERENCES `mydb`.`Roles` (`id_Rol`),
+    FOREIGN KEY (`UROidRol`)
+    REFERENCES `mydb`.`Roles` (`ROLidRol`),
   CONSTRAINT `usuario_roles_id_usuario_foreign`
-    FOREIGN KEY (`id_Usuario`)
+    FOREIGN KEY (`UROidUsuario`)
     REFERENCES `mydb`.`Usuario` (`USUidUsuario`));
 
 
@@ -136,30 +142,29 @@ CREATE TABLE IF NOT EXISTS `mydb`.`CruceroActual` (
 -- Table `mydb`.`Permisos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Permisos` (
-  `id_Permisos` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `permiso` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id_Permisos`));
+  `PERid_Permisos` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `PErpermiso` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`PERid_Permisos`));
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`RolesPermisos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`RolesPermisos` (
-  `id_roles_permisos` BIGINT NOT NULL,
-  `id_Rol` BIGINT NOT NULL,
-  `id_Permisos` BIGINT NOT NULL,
-  PRIMARY KEY (`id_roles_permisos`),
-  INDEX `roles_permisos_id _rol_foreign` (`id_Rol` ASC) VISIBLE,
-  INDEX `roles_permisos_id_permisos_foreign` (`id_Permisos` ASC) VISIBLE,
+  `RPEidRolesRermisos` BIGINT NOT NULL,
+  `RPEid_Rol` BIGINT NOT NULL,
+  `RPEidPermisos` BIGINT NOT NULL,
+  PRIMARY KEY (`RPEidRolesRermisos`),
+  INDEX `roles_permisos_id _rol_foreign` (`RPEid_Rol` ASC) VISIBLE,
+  INDEX `roles_permisos_id_permisos_foreign` (`RPEidPermisos` ASC) VISIBLE,
   CONSTRAINT `roles_permisos_id _rol_foreign`
-    FOREIGN KEY (`id_Rol`)
-    REFERENCES `mydb`.`Roles` (`id_Rol`),
+    FOREIGN KEY (`RPEid_Rol`)
+    REFERENCES `mydb`.`Roles` (`ROLidRol`),
   CONSTRAINT `roles_permisos_id_permisos_foreign`
-    FOREIGN KEY (`id_Permisos`)
-    REFERENCES `mydb`.`Permisos` (`id_Permisos`));
+    FOREIGN KEY (`RPEidPermisos`)
+    REFERENCES `mydb`.`Permisos` (`PERid_Permisos`));
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
