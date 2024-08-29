@@ -363,3 +363,14 @@ CALL InsertarCruceroEItinerario(
     9, 
     'Crucero a las regiones Antárticas'
 );
+
+
+
+
+const express = require('express'); const redis = require('redis');
+ const app = express();
+// Create a Redis client and connect to the Redis server const client = redis.createClient( host: 'redis', port: 6379. )):
+ client.on('error', (err) => ( console.error('Error connecting to Redis', err); )):
+ // Initialize the visits key if it doesn't exist client.get('visits', (err, visits) s ( if (err) throw err:
+ // If visits is null or not a number, initialize it to 0 if (visits === null || isNaN(visits)) ( client.set('visits', 0):
+ )):
